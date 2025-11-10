@@ -2,7 +2,7 @@
 # This requires a working installation of R (2.10 or higher) and sdcMicro.
 
 # Uncomment this to install sdcMicro from CRAN:
-install.packages("sdcMicro")
+# install.packages("sdcMicro")
 
 library(sdcMicro) 
 data(francdat)
