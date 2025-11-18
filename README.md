@@ -3,8 +3,8 @@
 Statistical Disclosure Control Course 2025.
 
 ## Reading & Reference Materials
-- [Handbook on Statistical Disclosure Control](https://sdctools.github.io/HandbookSDC/Handbook-on-Statistical-Disclosure-Control.pdf): General handbook on SDC
-- [Statistical Disclosure Control for Microdata](https://content.e-bookshelf.de/media/reading/L-9858263-81f5da5c58.pdf): Book by Matthias Templ about microdata protection
+- [Handbook on Statistical Disclosure Control](https://sdctools.github.io/HandbookSDC/): General handbook on SDC ([PDF version](https://sdctools.github.io/HandbookSDC/Handbook-on-Statistical-Disclosure-Control.pdf))
+- [Statistical Disclosure Control for Microdata](https://link.springer.com/book/10.1007/978-3-319-50272-4): Book by Matthias Templ about microdata protection.
 - [World Bank SDC Theory Guide](https://sdctheory.readthedocs.io/en/latest/index.html): Theoretical guide for microdata protection by The World Bank
 - [World Bank SDC Practice Guide](https://sdcpractice.readthedocs.io/en/latest/): Practical guide for microdata protection by The World Bank
 - [World Bank sdcApp manual](https://sdcappdocs.readthedocs.io/en/latest/): Guide for the GUI app for sdcMicro by The World Bank
@@ -14,7 +14,7 @@ Statistical Disclosure Control Course 2025.
 ## Software for Protection of Tabular Data
 - [GaussSuppression](https://cran.r-project.org/web/packages/GaussSuppression/index.html): Tabular Data Suppression using Gaussian Elimination
 - [SmallCountRounding](https://cran.r-project.org/web/packages/SmallCountRounding/index.html): Small Count Rounding of Tabular Data
-- [tau-ARGUS](https://research.cbs.nl/casc/tau.htm): Established software for table protection
+- [tau-ARGUS](https://research.cbs.nl/casc/tau.htm): Feature-rich software for table protection
 - [rtauargus](https://github.com/InseeFrLab/rtauargus): Package used to run tau-ARGUS from R
 
 ## Software for Protection of Microdata
