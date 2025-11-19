@@ -19,6 +19,7 @@ Statistical Disclosure Control Course 2025.
 
 ## Software for Protection of Microdata
 - [sdcMicro](https://sdctools.github.io/sdcMicro/): Feature-rich R package for microdata protection
+- [sdcMicro GUI](https://sdctools.github.io/sdcMicro/articles/sdcMicro.html): Guide to sdcApp (GUI for sdcMicro)
 - [mu-ARGUS](https://www.synthpop.org.uk/get-started.html): Feature-rich software for microdata protection
 - [Synthpop](https://www.synthpop.org.uk/get-started.html): R package for creating synthetic microdata
 
