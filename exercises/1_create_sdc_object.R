@@ -9,6 +9,9 @@ load(file = "data/persons.Rdata")
 names(persons)
 print(persons)
 
+# Change Birth_year = 9999 to NA
+persons[which(persons$Birth_year==9999), "Birth_year"] <- NA
+
 # Create an sdcMicroObj based on the persons sample dataset.
 # Direct identifier: Person_id
 # Key variables: Gender, Birth_year, Area
