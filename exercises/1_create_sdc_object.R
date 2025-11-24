@@ -30,7 +30,8 @@ sdc_0 <- createSdcObj(
 
 # Q3: Run 'slotNames(sdc_0)'. Which slot returns the key variables of obj_0?
 
-# Q4: Run 'sdc_0@risk'. What is the expected number of re-identifications (risk_ER)?
+# Q4: Run 'sdc_0@risk'. What is the global risk (expected fraction of 
+# reidentifications)?
 
 # Q5: Run 'sdc_0@risk$individual' to see the individual risks. What is the 
 # highest individual risk?
