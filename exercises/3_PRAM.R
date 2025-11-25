@@ -1,8 +1,11 @@
 ###############################################################################
-# Exercise 1: Create an sdcMicroObj from a dataset. Answer the questions.
+# Exercise 3: Apply PRAM. Answer the questions.
 ###############################################################################
 
 library(sdcMicro)
+
+# Set seed for reproducibility
+set.seed(1)
 
 # Load and view the persons sample dataset
 load(file = "data/persons.Rdata")
@@ -11,6 +14,16 @@ print(persons)
 
 # Change Birth_year = 9999 to NA
 persons[which(persons$Birth_year==9999), "Birth_year"] <- NA
+
+# Turn gender into a factor variable
+# This is required when using PRAM
+persons$Gender <- as.factor(persons$Gender)
+
+# Make valid transition matrix
+levels(persons$Gender)
+p <- matrix(c(0.7, 0.3, 0.3, 0.7), nrow = 2, ncol = 2)
+rownames(p) <- colnames(p) <- levels(persons$Gender)
+print(p)
 
 # Create an sdcMicroObj based on the persons sample dataset.
 # Direct identifier: Person_id
@@ -25,23 +38,21 @@ sdc_0 <- createSdcObj(
   weightVar = c("Weight"),
 )
 
-# Q1: Run 'sdc_0@origData' and compare it to 'print(persons)'. Which variable 
-# is missing, and why is it missing?
+# Apply PRAM on the Gender variable with transition matrix p
+sdc_pram <- pram(sdc_0, var = "Gender", pd = p)
 
-# Q2: Run 'sdc_0@deletedVars' to see which variables has been deleted. Confirm 
-# that the result aligns with Q1.
+# Q1: Run 'sdc_pram@pram'. How many values was changed to another value?
 
-# Q3: Run 'slotNames(sdc_0)'. Which slot returns the key variables of obj_0?
+# Q2: Rerun the whole script with a diagonal matrix:
+# 'p <- matrix(c(1.0, 0.0, 0.0, 1.0), nrow = 2, ncol = 2)'
+# Which changes happens to the data?
 
-# Q4: Run 'sdc_0@risk'. What is the global risk (expected fraction of 
-# reidentifications)?
+# Extract and inspect the modified dataset
+df_out_pram <- extractManipData(sdc_pram)
+print(df_out_pram)
 
-# Q5: Run 'sdc_0@risk$individual' to see the individual risks. What is the 
-# highest individual risk?
-
-# Q6: Which key (combination of key variables) appears three times in the dataset?
-
-# Q7: How many records violate 2-anonymity (i.e., they are sample unique)?
+# Generate report
+report(sdc_pram, outdir = "reports", filename = "report_pram.html")
 
 
 
